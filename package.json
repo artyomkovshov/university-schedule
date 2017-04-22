@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "test",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "dev": "webpack-dev-server --env.dev",
+    "production": "webpack -p --env.production"
   },
   "repository": {
     "type": "git",
@@ -35,6 +37,7 @@
   },
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.6"
   }
 }
