@@ -32,6 +32,15 @@ export default (env = defaultEnv) => ({
   module: {
     rules: [
       {
+        enforce: "pre",
+        test: /\.jsx$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          fix: false
+        }
+      },
+      {
         test: /.jsx?$/,
         exclude: /node_modules/,
         include: path.join(__dirname, 'src'),
@@ -54,6 +63,9 @@ export default (env = defaultEnv) => ({
         loader: 'style!css!sass',
       },
     ]
+  },
+  resolve: {
+    extensions: ['.jsx', '.js']
   },
   devServer: {
     hot: env.dev
